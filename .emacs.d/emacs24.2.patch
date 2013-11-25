@@ -1,0 +1,18 @@
+--- a/Library/Formula/emacs.rb
++++ b/Library/Formula/emacs.rb
+@@ -120,3 +121,15 @@ class Emacs < Formula
+     return s
+   end
+ end
++__END__
++--- src/nsterm.m.orig
+++++ src/nsterm.m
++@@ -4263,6 +4263,8 @@
++ 
++ - (void)changeInputMethod: (NSNotification *)notification
++ {
+++  if (!emacs_event)
+++    return;
++ 
++   struct frame *emacsframe = SELECTED_FRAME ();
++ 
