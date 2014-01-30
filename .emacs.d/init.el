@@ -18,6 +18,7 @@
 (line-number-mode t) ;; 現在の行番号を表示する
 (column-number-mode t) ;; 現在の列番号を表示する
 (which-function-mode t) ;; 現在の関数を表示する
+(setq-default indent-tabs-mode nil) ;; タブを使わない
 
 ;; その他の設定
 (global-set-key "\C-h" 'delete-backward-char) ;; C-hを1文字削除に変更
@@ -76,8 +77,9 @@
 
 ;; SLIMEの設定
 ;(setq inferior-lisp-program "/usr/local/bin/sbcl") ;; SBCLをCommon Lisp処理系に設定
-(setq inferior-lisp-program "/usr/local/bin/clisp") ;; CLISPをCommon Lisp処理系に設定
+;(setq inferior-lisp-program "/usr/local/bin/clisp") ;; CLISPをCommon Lisp処理系に設定
 ;(setq inferior-lisp-program "/usr/local/bin/abcl-no-rlwrap") ;; ABCLをCommon Lisp処理系に設定
+(setq inferior-lisp-program "/usr/local/bin/ccl") ;; CCLをCommon Lisp処理系に設定
 (require 'slime)
 (slime-setup '(slime-repl slime-fancy slime-banner)) ;; SLIMEのロード
 
